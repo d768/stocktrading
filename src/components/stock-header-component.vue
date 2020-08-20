@@ -5,7 +5,7 @@
     <router-link to="/stocks">Stocks</router-link> |
     <button>End Day</button> |
     <button>Save & Load</button> |
-    <div>Funds: 0</div>
+    <div>Funds: {{funds}}</div>
   </div>
 </template>
 

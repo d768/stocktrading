@@ -1,6 +1,14 @@
 <template>
   <div>
-    <p></p>
+    <div v-for="stock in availableStocks" v-bind:key="stock">
+      <div >
+        Name: {{stock.Name}}
+        Price: {{stock.Price}}
+        Quantity: {{stock.Quantity}}
+      </div>
+      <button>Buy</button>
+      <hr/>
+    </div>
   </div>
 </template>
 

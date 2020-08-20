@@ -1,7 +1,15 @@
 <template>
-<div>
-  <p>Portfolio</p>
-</div>
+  <div>
+    <div v-for="stock in boughtStocks" v-bind:key="stock">
+      <div >
+        Name: {{stock.Name}}
+        Price: {{stock.Price}}
+        Quantity: {{stock.Quantity}}
+      </div>
+      <button>Sell</button>
+      <hr/>
+    </div>
+  </div>
 </template>
 
 <script>

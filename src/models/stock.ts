@@ -1,10 +1,5 @@
 export class Stock {
-    Name: string;
-    Price: number;
-    Quantity: number;
-
-
-    constructor(Name: string, Price: number, Quantity: number) {
+    constructor(public Name: string, public Price: number, public Quantity: number) {
         this.Name = Name;
         this.Price = Price;
         this.Quantity = Quantity;

@@ -2,11 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import stockheader
-  from './components/stock-header-component.vue';
-import {mapActions, mapGetters, mapMutations, mapState} from "vuex";
+import {mapActions, mapGetters} from "vuex";
+import stockheader from './components/stock-header-component.vue'
 
 Vue.config.productionTip = false
+
+Vue.component('stockheader', stockheader )
 
 Vue.mixin({
   methods: {
@@ -21,10 +22,14 @@ Vue.mixin({
       'availableStocks',
       'funds'
     ])
-  },
-})
+  }
+});
+
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  created() {
+    this.$store.dispatch('populateStocks');
+  }
 }).$mount('#app')
